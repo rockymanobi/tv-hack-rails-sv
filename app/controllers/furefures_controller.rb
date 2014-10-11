@@ -16,7 +16,7 @@ class FurefuresController < ApplicationController
 
   def segmented_data( furefures )
     arr = [];
-    (3600 / 5).times { |n| 
+    (700 / 5).times { |n| 
       arr.push({ segment: (n * 5), vote: 0 });
     }
     furefures.all.each do |furefure|
@@ -56,14 +56,10 @@ class FurefuresController < ApplicationController
 
     @furefure = Furefure.new( { user: @user, channel: @channel, at_time_sec: param[:at_time_sec] } )
 
-    respond_to do |format|
-      if @furefure.save
-        format.html { redirect_to @furefure, notice: 'Furefure was successfully created.' }
-        format.json { render :show, status: :created, location: @furefure }
-      else
-        format.html { render :new }
-        format.json { render json: @furefure.errors, status: :unprocessable_entity }
-      end
+    if @furefure.save
+      render json: nil
+    else
+      render json: @furefure.errors, status: :unprocessable_entity
     end
   end
 
