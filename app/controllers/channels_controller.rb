@@ -4,6 +4,7 @@ class ChannelsController < ApplicationController
   # GET /channels
   # GET /channels.json
   def index
+    headers['Access-Control-Allow-Origin'] = "*"
     @channels = Channel.all
   end
 

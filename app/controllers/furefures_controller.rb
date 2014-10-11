@@ -25,6 +25,7 @@ class FurefuresController < ApplicationController
   # POST /furefures.json
   def create
 
+    headers['Access-Control-Allow-Origin'] = "*"
     param = furefure_params_for_create
 
     @user = User.find_by( uuid: param["user_uuid"] );
@@ -34,7 +35,6 @@ class FurefuresController < ApplicationController
     p @channel
 
     @furefure = Furefure.new( { user: @user, channel: @channel, at_time_sec: param[:at_time_sec] } )
-
 
     respond_to do |format|
       if @furefure.save
