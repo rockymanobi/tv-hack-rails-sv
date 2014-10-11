@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     @user = User.new({
       uuid: params[:user_uuid],
       name: params[:user_name],
-      photo_base64: params[:photo_base_64]
+      photo_base64: params[:photo_base64]
     })
 
     if @user.save
