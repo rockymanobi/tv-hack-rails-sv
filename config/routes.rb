@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :furefures
+  resources :furefures do
+    collection do
+      get 'index_for_tv'
+    end
+  end
 
   resources :users
 

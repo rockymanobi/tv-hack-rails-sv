@@ -7,6 +7,12 @@ class FurefuresController < ApplicationController
     @furefures = Furefure.all
   end
 
+  def index_for_tv
+    channel_uuid = params[:channel_uuid] 
+    @furefures = Furefure.joins( :channel ).merge( Channel.uuid_is( channel_uuid ) );
+    render json: dummy_furefure
+  end
+
   # GET /furefures/1
   # GET /furefures/1.json
   def show
@@ -25,7 +31,6 @@ class FurefuresController < ApplicationController
   # POST /furefures.json
   def create
 
-    headers['Access-Control-Allow-Origin'] = "*"
     param = furefure_params_for_create
 
     @user = User.find_by( uuid: param["user_uuid"] );
@@ -84,5 +89,53 @@ class FurefuresController < ApplicationController
 
     def furefure_params_for_create
       params.require(:furefure).permit(:channel_uuid, :user_uuid, :at_time_sec)
+    end
+
+    def dummy_furefure
+
+      a = [
+        { segment: 0, vote: 2},
+        { segment: 5, vote: 3},
+        { segment: 10, vote: 7},
+        { segment: 15, vote: 3},
+        { segment: 20, vote: 8},
+        { segment: 25, vote: 3},
+        { segment: 30, vote: 2},
+        { segment: 35, vote: 5},
+        { segment: 40, vote: 2},
+        { segment: 45, vote: 3},
+        { segment: 50, vote: 6},
+        { segment: 55, vote: 10},
+        { segment: 60, vote: 2},
+        { segment: 65, vote: 3},
+        { segment: 70, vote: 2},
+        { segment: 75, vote: 3},
+        { segment: 80, vote: 2},
+        { segment: 85, vote: 3},
+        { segment: 90, vote: 2},
+        { segment: 95, vote: 3},
+        { segment: 110, vote: 7},
+        { segment: 115, vote: 3},
+        { segment: 120, vote: 8},
+        { segment: 125, vote: 3},
+        { segment: 130, vote: 2},
+        { segment: 135, vote: 5},
+        { segment: 140, vote: 2},
+        { segment: 145, vote: 3},
+        { segment: 150, vote: 6},
+        { segment: 155, vote: 10},
+        { segment: 160, vote: 2},
+        { segment: 165, vote: 3},
+        { segment: 170, vote: 2},
+        { segment: 175, vote: 3},
+        { segment: 180, vote: 2},
+        { segment: 185, vote: 3},
+        { segment: 190, vote: 2},
+        { segment: 195, vote: 3},
+      ]
+
+      a.to_json
+
+
     end
 end
