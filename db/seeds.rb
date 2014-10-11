@@ -10,9 +10,22 @@
 #
 
 
+movie_uris =[
+  "https://www.youtube.com/watch?v=Itv7I3cVcWI",
+  "https://www.youtube.com/watch?v=SsmfYJEamyU",
+  "https://www.youtube.com/watch?v=YxheBA8YwIo",
+  "https://www.youtube.com/watch?v=Qhi3Yl1WtRg",
+  "https://www.youtube.com/watch?v=CH6l2ToFTQE",
+  "https://www.youtube.com/watch?v=2-oh0q4PBkk",
+  "https://www.youtube.com/watch?v=T4PZ_i9z8xg",
+  "https://www.youtube.com/watch?v=z58wiFbi2zs",
+  "https://www.youtube.com/watch?v=j9e1rEbVXtc",
+  "https://www.youtube.com/watch?v=R8QkMAc3UTI",
+]
+
 10.times { |n|
   channel = Channel.new(
-    { uuid: "mov#{n}" , title: "動画タイトル_#{n}", source_uri: "http://google.com/sample#{n}"});
+    { uuid: "mov#{n}" , title: "動画タイトル_#{n}", source_uri: "#{movie_uris[n]}"});
   channel.save!
 } 
 
