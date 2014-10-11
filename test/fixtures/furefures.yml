@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  channel_id: 
+  user_id: 
+  at_time_sec: 1
+
+two:
+  channel_id: 
+  user_id: 
+  at_time_sec: 1

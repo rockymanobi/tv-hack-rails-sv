@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Channel:</strong>
+  <%= @furefure.channel %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @furefure.user %>
+</p>
+
+<p>
+  <strong>At time sec:</strong>
+  <%= @furefure.at_time_sec %>
+</p>
+
+<%= link_to 'Edit', edit_furefure_path(@furefure) %> |
+<%= link_to 'Back', furefures_path %>

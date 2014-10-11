@@ -11,11 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141011021917) do
+ActiveRecord::Schema.define(version: 20141011072100) do
+
+  create_table "channels", force: true do |t|
+    t.string   "uuid",                   null: false
+    t.string   "title",                  null: false
+    t.integer  "status",     default: 0
+    t.string   "source_uri",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "channels", ["uuid"], name: "index_channels_on_uuid", unique: true
+
+  create_table "furefures", force: true do |t|
+    t.integer  "channel_id"
+    t.integer  "user_id"
+    t.integer  "at_time_sec"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "furefures", ["channel_id"], name: "index_furefures_on_channel_id"
+  add_index "furefures", ["user_id"], name: "index_furefures_on_user_id"
 
   create_table "tests", force: true do |t|
     t.string   "name"
     t.integer  "wow"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "uuid",         null: false
+    t.string   "name",         null: false
+    t.string   "photo_base64"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

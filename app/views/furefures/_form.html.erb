@@ -1,0 +1,29 @@
+<%= form_for(@furefure) do |f| %>
+  <% if @furefure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@furefure.errors.count, "error") %> prohibited this furefure from being saved:</h2>
+
+      <ul>
+      <% @furefure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :channel_id %><br>
+    <%= f.text_field :channel_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :at_time_sec %><br>
+    <%= f.number_field :at_time_sec %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

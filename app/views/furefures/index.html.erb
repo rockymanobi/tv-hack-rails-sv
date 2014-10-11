@@ -1,0 +1,29 @@
+<h1>Listing furefures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel</th>
+      <th>User</th>
+      <th>At time sec</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @furefures.each do |furefure| %>
+      <tr>
+        <td><%= furefure.channel %></td>
+        <td><%= furefure.user %></td>
+        <td><%= furefure.at_time_sec %></td>
+        <td><%= link_to 'Show', furefure %></td>
+        <td><%= link_to 'Edit', edit_furefure_path(furefure) %></td>
+        <td><%= link_to 'Destroy', furefure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Furefure', new_furefure_path %>
