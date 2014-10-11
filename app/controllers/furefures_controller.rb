@@ -10,7 +10,22 @@ class FurefuresController < ApplicationController
   def index_for_tv
     channel_uuid = params[:channel_uuid] 
     @furefures = Furefure.joins( :channel ).merge( Channel.uuid_is( channel_uuid ) );
-    render json: dummy_furefure
+    render json: segmented_data(@furefures)
+  end
+
+
+  def segmented_data( furefures )
+    arr = [];
+    (3600 / 5).times { |n| 
+      arr.push({ segment: (n * 5), vote: 0 });
+    }
+    furefures.all.each do |furefure|
+      target = arr.select { |item| item[:segment] ==  ( (furefure.at_time_sec / 5).floor * 5 ) }[0]
+      target[:vote] = target[:vote] + 1
+    end
+
+    arr.to_json
+
   end
 
   # GET /furefures/1
