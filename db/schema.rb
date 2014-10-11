@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20141011072100) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "uuid",         null: false
-    t.string   "name",         null: false
-    t.string   "photo_base64"
+    t.string   "uuid",                       null: false
+    t.string   "name",                       null: false
+    t.string   "photo_base64", limit: 10000
     t.datetime "created_at"
     t.datetime "updated_at"
   end
