@@ -1,0 +1,329 @@
+body {
+    width:100%;
+    margin:0;
+    padding:0;
+    color:#666;
+    font-family:Arial, sans-serif;
+    line-height: 18px;
+    background: #eb5350;
+}
+
+#main {
+	position: relative;
+	text-align: center;
+	width: 100%;
+    overflow: hidden;
+	height: 568px;
+}
+
+#mainRanking{
+	position: relative;
+	text-align: center;
+	width: 100%;
+	height: 568px;	
+}
+
+#tapImage {
+	margin-top: 63px;
+	z-index: 100;
+	width: 245px;
+	height: 245px;
+}
+
+#imageArea {
+	display: block;
+}
+#shakeImageArea {
+	display: none;
+}
+
+#shakeImage2 {
+	margin-top: -327px;
+	margin-left: -200px;
+	width: 705px;
+}
+#shakeImage {
+	margin-top: 58px;
+	z-index: 100;
+	width: 175px;
+	height: 256px;
+}
+
+.shake_easeout {
+	-moz-animation: anime2 700ms cubic-bezier(0.545, 0.105, 0.890, 0.285) 1 normal;
+	-webkit-animation: anime2 500ms cubic-bezier(0.545, 0.105, 0.890, 0.285) 1 normal;
+	-o-animation: anime2 700ms cubic-bezier(0.545, 0.105, 0.890, 0.285) 1 normal;
+	-ms-animation: anime2 700ms cubic-bezier(0.545, 0.105, 0.890, 0.285) 1 normal;
+}
+
+@-webkit-keyframes anime2 {
+0% {width: 175px; margin-top: 58px;margin-left:-176px;z-index: 10;}
+100% {width: 705px; margin-top: -327px;margin-left: -450px;z-index: 10;}
+}
+
+#circle3 {
+	position: absolute;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: -367px;
+}
+.circle {
+	position: absolute;
+	text-align: center;
+	margin-top: 63px;
+	margin-left: -245px;
+	z-index:10;
+}
+
+.frame {
+	position: absolute;
+	text-align: center;
+	margin-top: 58px;
+	margin-left: -175px;
+	z-index:10;
+}
+
+.easeout {
+	-moz-animation: anime1 700ms cubic-bezier(0.545, 0.105, 0.890, 0.285) 1 normal;
+	-webkit-animation: anime1 700ms cubic-bezier(0.545, 0.105, 0.890, 0.285) 1 normal;
+	-o-animation: anime1 700ms cubic-bezier(0.545, 0.105, 0.890, 0.285) 1 normal;
+	-ms-animation: anime1 700ms cubic-bezier(0.545, 0.105, 0.890, 0.285) 1 normal;
+}
+
+@-webkit-keyframes anime1 {
+0% {width: 245px; margin-top: 63px;margin-left:-245px;z-index: 10;}
+100% {width: 735px; margin-top: -177px;margin-left: -500px;z-index: 10;}
+}
+
+#tvConnect {
+	position: absolute;
+	margin-top: 70px;
+	height: 145px;
+	width: 211px;
+	margin-left: -105px;
+}
+
+#tvConnectContents{
+	height: 105;
+	width: 197px;
+	position: absolute;
+	margin-top: 373px;
+	margin-left: -99px;
+}
+
+#arrow {
+	position: absolute;
+	margin-top: 250px;
+	width: 35px;
+	margin-left: -17px;
+	margin-top: 260px;
+}
+
+/** result **/
+
+#contents {
+	position: absolute;
+	width: 100%;
+	overflow: scroll;
+	height: 100%;
+	top: 82px;
+	z-index: 10;
+}
+
+#head {
+	text-align: left;
+	width: 100%;
+	height: 82px;
+}
+
+#headRank {
+	position: fixed;
+	text-align: left;
+	width: 100%;
+	height: 82px;
+	z-index: 100;
+	background: #eb5350;
+}
+
+.backBtn{
+	width: 21px;
+	height: 30px;
+	margin-top: 34px;
+	margin-left: 13px;
+}
+
+#title {
+	position: absolute;
+	float: right;
+	right: 37px;
+	margin-top: 34px;
+	width: 98px;
+	height: 43px;
+}
+
+#myHighlight {
+	position: absolute;
+	background: #fff;
+	width: 100%;
+	height: 179px;
+}
+
+#hlArea {
+	position: absolute;
+	text-align: left;
+	margin-top: 13px;
+	width: 252px;
+	height: 153px;
+	margin-right: 0;
+	right: 28px; 
+}
+
+#myhlPhoto {
+	position: absolute;
+	width: 243px;
+	height: 137px;
+	margin-left: 0;
+}
+
+#myhlShare {
+	position: absolute;
+	width: 53px;
+	height: 53px;
+	bottom: 0;
+	right: 0;
+}
+
+#rankingArea {
+	position: absolute;
+	text-align: right;
+	top: 189px;
+	width: 100%;
+}
+	#rankingTitle {
+		margin-top: 26px;
+		width: 202px;
+		height: 17px;
+		margin-right: 37px;
+		margin-bottom: 20px;
+	}
+
+	#rankingno1Area {
+		position: absolute;
+		width: 216px;
+		height: 96px;
+		right: 27px;
+	}
+		#rankno1Area {
+			float: left;
+			width: 58px;
+			height: 96px;
+		}#rankno1 {
+			margin-top: 44px;
+			width: 58px;
+			height: 52px;
+		}
+		#rankno1PhotoArea {
+			text-align: left;
+			float: left;
+			width: 158px;
+			height: 97px;
+			margin-bottom: 4px;
+		}
+		#rankno1Photo {
+			width: 149px;
+			height: 84px;
+		}
+		#rankNo1Share {
+			position: absolute;
+			width: 41px;
+			height: 41px;
+			right: 0;
+			bottom: 0;
+		}
+	#rankingno2Area {
+		position: absolute;
+		margin-top: 101px;
+		width: 216px;
+		height: 96px;
+		right: 27px;
+	}
+	#rankingno3Area {
+		position: absolute;
+		margin-top: 202px;
+		width: 216px;
+		height: 96px;
+		right: 27px;
+	}
+
+
+#shareTitle {
+	position: absolute;
+	float: right;
+	right: 28px;
+	margin-top: 34px;
+	width: 78px;
+	height: 32px;
+}
+
+#shareArea {
+	position: absolute;
+	background: #fff;
+	width: 100%;
+	height: 1074px;
+}
+
+#userIcon {
+	text-align: right;
+	width: 100%;
+	height: 75px;
+}
+
+#icon {
+	margin-top: 23px;
+	margin-right: 37px;
+	width: 209px;
+	height: 53px;
+}
+
+#commentArea{
+	width: 100%;
+	height: 50px;
+	margin-top:15px;
+	margin-bottom: 15px;
+}
+
+#comment {
+	width: 243px;
+	height:50px;
+	text-align: right;
+}
+
+#shlArea {
+	margin-top: 13px;
+	width: 100%;
+}
+
+#sharePhoto {
+	width: 243px;
+	height: 137px;
+	margin-left: 0;
+}
+
+/** reccomend **/
+
+#recommenderIcon {
+	float: right;
+	right: 37px;
+	margin-top: 25px;
+	width: 141px;
+	height: 41px;
+}
+
+#playBtn {
+	
+	position: absolute;
+	width: 53px;
+	height: 53px;
+	bottom: 0;
+	right: 0;
+}
