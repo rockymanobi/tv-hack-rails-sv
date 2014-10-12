@@ -36,5 +36,28 @@ movie_uris =[
   user.save!
 }
 
+def buildFurefure( segment, vote )
+  vote.times do ||
+    f = Furefure.new({ channel_id: 1, user_id: 1 });
+    f.at_time_sec = 5 * segment
+    f.save!
+  end
+end
 
 
+
+buildFurefure(1, 10)
+buildFurefure(2, 28)
+buildFurefure(3, 49)
+buildFurefure(4, 33)
+buildFurefure(5, 10)
+buildFurefure(6, 5)
+buildFurefure(7, 80)
+buildFurefure(8, 130)
+buildFurefure(9, 60)
+buildFurefure(10, 100)
+buildFurefure(17, 140)
+buildFurefure(28, 40)
+buildFurefure(29, 20)
+buildFurefure(30, 130)
+buildFurefure(51, 100)
